@@ -5,7 +5,6 @@ import WorkerRow from './WorkerRow';
 const WorkerForm = () => {
 
     const { dataReducer } = useContext(DataContext);
-    console.log('dataReducer', dataReducer);
 
     const turnOver = (e) => {
         e.preventDefault();
@@ -18,9 +17,9 @@ const WorkerForm = () => {
                 <div>Location</div>
             </div>
             <form onSubmit={turnOver}>
-                { 
-                    dataReducer().locations.map( (val, index)=> { 
-                        return <WorkerRow key={val.id + index} datarow={val.id} />  
+                {dataReducer.hasOwnProperty('locations') && 
+                    dataReducer.locations.map( (val, index)=> { 
+                        return <WorkerRow key={val.id + index} dataid={val.id} />  
                     }) 
                 }
             </form>

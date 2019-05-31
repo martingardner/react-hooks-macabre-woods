@@ -1,16 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useContext , useEffect , useState } from 'react';
 import WorkerInput from './WorkerInput';
 import DataContext from '../../context/DataContext';
 
 const WorkerRow = (props) => {
 
     const { dataReducer , dispatch } = useContext(DataContext);
-    let locationRow = dispatch({type: 'RETURN_LOCATION_NAME', id: props.datarow});
-    console.log('locationRow', locationRow);
+    const [getName, setName] = useState()
+     
+    console.log('WorkerRow', getName);
+
+    useEffect( ()=> {
+        const datarow = dataReducer.locations.filter( (row) => row.id === props.dataid)
+        setName(datarow[0].name)
+    }, []);
+
     return (
         <div>
             <WorkerInput />
-            <span></span>
+            <span>{getName}</span>
         </div>
     )
 }

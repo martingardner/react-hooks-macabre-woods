@@ -8,22 +8,25 @@ import WorkerForm from './workerSection/WorkerForm';
 
 const Main = () => {
     const [dataReducer, dispatch] = useReducer(DataReducer, [] );
-
     console.log('dataReducer', dataReducer);
 
     useEffect( ()=> {
+
         dispatch({
             type: 'POPULATE_DATA',
             data : InitValues
-        })
+        }) 
+
     }, [])
 
     return(
         <DataContext.Provider value={{dataReducer, dispatch}}>
             <div>
-                <Header />
-                {/*<WorkerForm /> */}
-            </div>
+               
+                    <Header />
+                    <WorkerForm />
+                   
+            </div> 
         </DataContext.Provider>
     )
 }
