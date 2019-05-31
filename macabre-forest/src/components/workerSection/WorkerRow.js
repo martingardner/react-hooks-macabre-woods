@@ -5,11 +5,12 @@ import DataContext from '../../context/DataContext';
 const WorkerRow = (props) => {
 
     const { dataReducer , dispatch } = useContext(DataContext);
-    console.log('this.props', props);
+    let locationRow = dispatch({type: 'RETURN_LOCATION_NAME', id: props.datarow});
+    console.log('locationRow', locationRow);
     return (
         <div>
             <WorkerInput />
-            <span>{ dispatch({type: 'RETURN_LOCATION_ROW', id: props.datarow}) }</span>
+            <span></span>
         </div>
     )
 }
