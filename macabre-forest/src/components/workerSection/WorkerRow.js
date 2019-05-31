@@ -12,12 +12,12 @@ const WorkerRow = (props) => {
 
         const datarow = filterArrayReturn(dataReducer.locations, 'id', props.dataid);
         setName(datarow[0].name)
-        
+
     }, [dataReducer.locations, props.dataid]);
 
     return (
         <div>
-            <WorkerInput />
+            <WorkerInput dataid={props.dataid} />
             <span>{getName}</span>
         </div>
     )

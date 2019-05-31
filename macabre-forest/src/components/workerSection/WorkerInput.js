@@ -1,14 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect , useState } from 'react';
 import DataContext from '../../context/DataContext';
+import { filterArrayReturn } from '../../helperFunctions/HelperFunctions';
 
-const WorkerInput = () => {
+
+const WorkerInput = (props) => {
     
     const { dataReducer, dispatch } = useContext(DataContext);
+    const [getCount, setCount] = useState()
+
+    useEffect( ()=> {
+
+        const workerRowCount = filterArrayReturn(dataReducer.workerRowCount, 'id', props.dataid)
+        setCount(workerRowCount[0].count)
+
+    }, [dataReducer.workerRowCount, props.dataid])
 
     return (
         <>
             <button>-</button>
-            <input type="text" />
+            <span>{getCount}</span>
             <button>+</button>
         </>
     )
