@@ -1,18 +1,19 @@
 import React, { useContext , useEffect , useState } from 'react';
 import WorkerInput from './WorkerInput';
 import DataContext from '../../context/DataContext';
+import { filterArrayReturn } from '../../helperFunctions/HelperFunctions';
 
 const WorkerRow = (props) => {
 
-    const { dataReducer , dispatch } = useContext(DataContext);
+    const { dataReducer } = useContext(DataContext);
     const [getName, setName] = useState()
-     
-    console.log('WorkerRow', getName);
 
     useEffect( ()=> {
-        const datarow = dataReducer.locations.filter( (row) => row.id === props.dataid)
+
+        const datarow = filterArrayReturn(dataReducer.locations, 'id', props.dataid);
         setName(datarow[0].name)
-    }, []);
+        
+    }, [dataReducer.locations, props.dataid]);
 
     return (
         <div>

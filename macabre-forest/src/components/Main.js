@@ -11,7 +11,7 @@ const Main = () => {
     console.log('dataReducer', dataReducer);
 
     useEffect( ()=> {
-
+        
         dispatch({
             type: 'POPULATE_DATA',
             data : InitValues
