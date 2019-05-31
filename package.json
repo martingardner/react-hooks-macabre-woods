@@ -1,0 +1,19 @@
+{
+  "name": "react-hooks-macabre-woods",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martingardner/react-hooks-macabre-woods.git"
+  },
+  "author": "martin gardner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martingardner/react-hooks-macabre-woods/issues"
+  },
+  "homepage": "https://github.com/martingardner/react-hooks-macabre-woods#readme"
+}
