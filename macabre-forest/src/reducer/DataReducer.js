@@ -1,5 +1,17 @@
 const InitValues = () => {
-    return { maxWorkers : 2}
+    return { 
+        maxWorkers : 2,
+        locations : [
+            {
+                id: 0,
+                name: 'Gloomfire Swamp'
+            },
+            {
+                id: 1,
+                name: 'Rattleskull Forest'
+            }
+        ]
+    }
 } 
 
 const DataReducer = (state, action) => {

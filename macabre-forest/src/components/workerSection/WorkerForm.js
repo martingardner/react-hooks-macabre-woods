@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import DataContext from '../../context/DataContext';
+import WorkerRow from './WorkerRow';
 
 const WorkerForm = () => {
 
+    const { dataReducer } = useContext(DataContext);
+    console.log('dataReducer', dataReducer);
     return (
         <div>
             <div>
@@ -9,7 +13,11 @@ const WorkerForm = () => {
                 <div>Location</div>
             </div>
             <form>
-
+                { 
+                    dataReducer().locations.map( (val, index)=> { 
+                        return <WorkerRow key={val.id + index} />  
+                    }) 
+                }
             </form>
         </div>
     )

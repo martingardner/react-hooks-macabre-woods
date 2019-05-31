@@ -4,7 +4,6 @@ import DataContext from '../../context/DataContext';
 const Header = () => {
 
     const { dataReducer } = useContext(DataContext);
-    console.log('dataReducer', dataReducer);
         
     return (
         <div>
