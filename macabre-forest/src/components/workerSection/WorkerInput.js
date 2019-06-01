@@ -1,7 +1,5 @@
 import React, { useContext, useState } from 'react';
 import DataContext from '../../context/DataContext';
-import { filterArrayReturn } from '../../helperFunctions/HelperFunctions';
-
 
 const WorkerInput = (props) => {
     
@@ -27,6 +25,7 @@ const WorkerInput = (props) => {
             <button onClick={ ()=> { decrementCount() } }>-</button>
             <span>{dataReducer.locations[props.dataid].workercount}</span>
             <button onClick={ ()=> { incrementCount() } }>+</button>
+            {getError === true && <span>error</span>}
         </>
     )
 }
