@@ -9,17 +9,29 @@ const WorkerInput = (props) => {
     const [getCount, setCount] = useState()
 
     useEffect( ()=> {
+        console.log('WORKERINPUT USEEFFECT');
+        const workerRowCount = filterArrayReturn(Object.values(dataReducer.locations), 'id', props.dataid)
+        console.log('WORKER INPUT', workerRowCount);
+        setCount(workerRowCount[0].workercount)
 
-        const workerRowCount = filterArrayReturn(dataReducer.workerRowCount, 'id', props.dataid)
-        setCount(workerRowCount[0].count)
+    }, [dataReducer.workerRowCount, props.dataid] )
 
-    }, [dataReducer.workerRowCount, props.dataid])
+    const incrementCount = () => {
+        //const workerRowIndex = dataReducer.locations.findIndex( (obj) => obj.id === props.dataid )
+               
+        dispatch({
+            type : 'INCREMENT_WORKER_ROW_COUNT',
+            index : props.dataid            
+        })
+        
+        
+    }
 
     return (
         <>
             <button>-</button>
-            <span>{getCount}</span>
-            <button>+</button>
+            <span>{dataReducer.locations[props.dataid].workercount}</span>
+            <button onClick={ ()=> { incrementCount() }  }>+</button>
         </>
     )
 }

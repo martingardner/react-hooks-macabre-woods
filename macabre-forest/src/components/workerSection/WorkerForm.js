@@ -18,7 +18,7 @@ const WorkerForm = () => {
             </div>
             <form onSubmit={turnOver}>
                 {dataReducer.hasOwnProperty('locations') && 
-                    dataReducer.locations.map( (val, index)=> { 
+                    Object.values(dataReducer.locations).map( (val, index)=> { 
                         return <WorkerRow key={val.id + index} dataid={val.id} />  
                     }) 
                 }

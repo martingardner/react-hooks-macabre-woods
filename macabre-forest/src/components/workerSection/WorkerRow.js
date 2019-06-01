@@ -10,7 +10,7 @@ const WorkerRow = (props) => {
 
     useEffect( ()=> {
 
-        const datarow = filterArrayReturn(dataReducer.locations, 'id', props.dataid);
+        const datarow = filterArrayReturn(Object.values(dataReducer.locations), 'id', props.dataid);
         setName(datarow[0].name)
 
     }, [dataReducer.locations, props.dataid]);

@@ -1,25 +1,17 @@
 const InitValues = {
     maxWorkers : 2,
-    locations : [
-        {
+    locations : {
+        0 : {
             id: 0,
-            name: 'Gloomfire Swamp'
+            name: 'Gloomfire Swamp',
+            workercount : 0
         },
-        {
+        1 : {
             id: 1,
-            name: 'Rattleskull Forest'
+            name: 'Rattleskull Forest',
+            workercount : 0
         }
-    ],
-    workerRowCount : [
-        {
-            id: 0,
-            count : 0
-        },
-        {
-            id: 1,
-            count : 0
-        }
-    ]  
+    }
 } 
 
 export default InitValues
