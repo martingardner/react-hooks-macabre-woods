@@ -15,7 +15,9 @@ the purpose of this repo is to play around with react hooks by creating a fragme
 - should not be able to go above max number of workers, and need to apply all workers before the activate button will function
 
 ## Todo List
-- research how to do tests on react hooks
+- research how to do tests on react hooks (Running into all kinds of issues getting this to work);
+- remove error, it actually serves no purpose as I control all legal numbers already
+- bug in Current Number of Placed Workers, it's not adding them correctly, check out HelperFunctions
 
 ## Install
 - npm install

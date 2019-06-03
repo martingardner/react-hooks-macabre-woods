@@ -7,8 +7,12 @@ const filterArrayReturn = (arr, arrProp, targetProp) => {
 const returnWorkerRowTotals = (arr) => {
     let tally = 0;
     if(Array.isArray(arr)){ 
+        console.log('returnWorkerRowTotals', arr);
         arr.forEach( (val) => {
+            console.log('val', val);
+            console.log('val.workercount', val.workercount);
             tally = tally + val.workercount;
+            console.log('tally', tally);
         });
     }
     return tally;
