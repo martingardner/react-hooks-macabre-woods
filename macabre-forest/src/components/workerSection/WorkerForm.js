@@ -8,7 +8,6 @@ const WorkerForm = (props) => {
 
     const formSubmit = (e) => {
         e.preventDefault();
-        console.log('formSubmit');
     }
 
     const showResults = (e) => {

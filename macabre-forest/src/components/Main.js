@@ -10,7 +10,7 @@ import ResultsPanel from './resultsSection/ResultsPanel';
 const Main = () => {
     const [dataReducer, dispatch] = useReducer(DataReducer, [] );
     const [getResults, setResults] = useState(false)
-    console.log('dataReducer', dataReducer);
+    //console.log('dataReducer', dataReducer);
 
     useEffect( ()=> {
         dispatch({

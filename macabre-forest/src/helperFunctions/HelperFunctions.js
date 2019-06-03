@@ -9,8 +9,8 @@ const returnWorkerRowTotals = (arr) => {
     if(Array.isArray(arr)){ 
         console.log('returnWorkerRowTotals', arr);
         arr.forEach( (val) => {
-            console.log('val', val);
-            console.log('val.workercount', val.workercount);
+            //console.log('val', val);
+            console.log('val.workercount', tally, val.workercount);
             tally = tally + val.workercount;
             console.log('tally', tally);
         });
