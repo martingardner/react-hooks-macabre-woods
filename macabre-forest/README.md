@@ -15,10 +15,7 @@ the purpose of this repo is to play around with react hooks by creating a fragme
 - should not be able to go above max number of workers, and need to apply all workers before the activate button will function
 
 ## Todo List
-- add in error handling so that more workers can't be added than the max allows
-- add in error handling so that less than one worker can't exist
-- add in activate button
-- add in results panel to show results
+
 
 ## Install
 - npm install
