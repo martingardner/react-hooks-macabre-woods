@@ -1,5 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext , useState } from 'react';
 import DataContext from '../../context/DataContext';
+import { returnWorkerRowTotals } from '../../helperFunctions/HelperFunctions';
 
 const WorkerInput = (props) => {
     
@@ -8,7 +9,9 @@ const WorkerInput = (props) => {
 
     const incrementCount = () => {
         let newValue = dataReducer.locations[props.dataid].workercount + 1;
-        if(newValue < dataReducer.maxWorkers){
+        let workerRowTotal = returnWorkerRowTotals(Object.values(dataReducer.locations));
+        
+        if(newValue <= dataReducer.maxWorkers && workerRowTotal < dataReducer.maxWorkers){
             setError(false);
             dispatch({
                 type : 'INCREMENT_WORKER_ROW_COUNT',
@@ -27,6 +30,7 @@ const WorkerInput = (props) => {
 
     const decrementCount = () => {
         let newValue = dataReducer.locations[props.dataid].workercount - 1;
+
         if(newValue >= 0){
             setError(false);
             dispatch({

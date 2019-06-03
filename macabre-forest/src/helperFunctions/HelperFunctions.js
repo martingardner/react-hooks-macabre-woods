@@ -4,5 +4,16 @@ const filterArrayReturn = (arr, arrProp, targetProp) => {
     }
 }
 
+const returnWorkerRowTotals = (arr) => {
+    console.log('returnWorkerRowTotals', arr);
+    let tally = 0;
+    if(Array.isArray(arr)){ 
+        arr.forEach( (val) => {
+            tally = tally + val.workercount;
+        });
+    }
+    return tally;
+}
 
-export { filterArrayReturn }
+
+export { filterArrayReturn , returnWorkerRowTotals }
