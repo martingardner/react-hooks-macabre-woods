@@ -7,17 +7,41 @@ const WorkerInput = (props) => {
     const [getError, setError] = useState(false)
 
     const incrementCount = () => {
-        dispatch({
-            type : 'INCREMENT_WORKER_ROW_COUNT',
-            index : props.dataid            
-        })       
+        let newValue = dataReducer.locations[props.dataid].workercount + 1;
+        if(newValue < dataReducer.maxWorkers){
+            setError(false);
+            dispatch({
+                type : 'INCREMENT_WORKER_ROW_COUNT',
+                index : props.dataid,
+                newCount : newValue        
+            })
+            
+            dispatch({
+                type : 'UPDATE_CURRENT_WORKER',
+                newValue : newValue
+            })
+        } else {
+            setError(true);
+        }
     }
 
     const decrementCount = () => {
-        dispatch({
-            type : 'DECREMENT_WORKER_ROW_COUNT',
-            index : props.dataid
-        })
+        let newValue = dataReducer.locations[props.dataid].workercount - 1;
+        if(newValue >= 0){
+            setError(false);
+            dispatch({
+                type : 'DECREMENT_WORKER_ROW_COUNT',
+                index : props.dataid,
+                newCount : newValue
+            })
+
+            dispatch({
+                type : 'UPDATE_CURRENT_WORKER',
+                newValue : newValue
+            })
+        } else {
+            setError(true);
+        }
     }
 
     return (

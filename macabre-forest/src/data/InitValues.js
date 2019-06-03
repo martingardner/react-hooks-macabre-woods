@@ -1,5 +1,6 @@
 const InitValues = {
-    maxWorkers : 2,
+    currentWorkers : 0,
+    maxWorkers : 4,
     locations : {
         0 : {
             id: 0,
