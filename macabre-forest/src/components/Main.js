@@ -5,12 +5,13 @@ import DataContext from '../context/DataContext';
 import Header from './headSection/Header';
 import WorkerForm from './workerSection/WorkerForm';
 import ResultsPanel from './resultsSection/ResultsPanel';
+import StateTest from './stateTest/StateTest';
 
 
 const Main = () => {
     const [dataReducer, dispatch] = useReducer(DataReducer, [] );
     const [getResults, setResults] = useState(false)
-    //console.log('dataReducer', dataReducer);
+    console.log('dataReducer', dataReducer);
 
     useEffect( ()=> {
         dispatch({
@@ -33,6 +34,7 @@ const Main = () => {
                     <WorkerForm updateSetResults={ updateSetResults } />
                     {getResults && <ResultsPanel />}
             </div> 
+            <StateTest />
         </DataContext.Provider>
     )
 }
